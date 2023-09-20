@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
+import TodoDetail from "./TodoDetail";
 
 const TodoList = () => {
   let todos = useSelector((state) => state.todos);
@@ -8,7 +9,7 @@ const TodoList = () => {
     <Fragment>
       <div>List of Todos...</div>
       {todos.map((todo) => {
-        return <h4>{todo.name}</h4>;
+        return <TodoDetail todo={todo} key={todo.id} />;
       })}
     </Fragment>
   );
